@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "aws-word-rules": "^0.9.1",
-    "structured-source": "^3.0.2"
+    "spellcheck-technical-word": "^2.0.0",
+    "structured-source": "^3.0.2",
+    "textlint-rule-helper": "^2.1.1"
   },
   "devDependencies": {
     "textlint-scripts": "^1.2.4",
