@@ -6,7 +6,9 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-    npm install textlint-rule-aws-spellcheck
+```
+$ npm install textlint-rule-aws-spellcheck
+```
 
 ## Usage
 
@@ -23,7 +25,7 @@ Via `.textlintrc`(Recommended)
 Via CLI
 
 ```
-textlint --rule aws-spellcheck README.md
+$ textlint --rule aws-spellcheck README.md
 ```
 
 ### Build
@@ -31,15 +33,22 @@ textlint --rule aws-spellcheck README.md
 Builds source codes for publish to the `lib` folder.
 You can write ES2015+ source codes in `src/` folder.
 
-    npm run build
+```
+$ npm run build
+```
 
 ### Tests
-
 Run test code in `test` folder.
 Test textlint rule by [textlint-tester](https://github.com/textlint/textlint-tester "textlint-tester").
 
-    npm test
+```
+$ npm test
+```
+
+## Contribution
+Fork this repo and make Pull Request.  
+
+If you want to change or add new rules, check [aws-word-rules](https://github.com/37108/aws-word-rules) repo !!
 
 ## License
-
-MIT © 
+MIT
