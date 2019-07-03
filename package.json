@@ -22,5 +22,8 @@
   },
   "author": "",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "aws-word-rules": "^0.1.0"
+  }
 }
