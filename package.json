@@ -1,29 +1,41 @@
 {
+  "name": "textlint-rule-aws-spellcheck",
   "version": "0.0.0",
+  "description": "textlint rule for AWS",
+  "main": "src/index.js",
+  "files": [
+    "src/"
+  ],
   "keywords": [
     "textlintrule"
   ],
-  "main": "lib/index.js",
-  "files": [
-    "lib/",
-    "src/"
-  ],
+  "author": "37108",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/37108/textlint-rule-aws-spellcheck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/37108/textlint-rule-aws-spellcheck/issues"
+  },
+  "homepage": "https://github.com/37108/textlint-rule-aws-spellcheck",
   "scripts": {
     "test": "textlint-scripts test",
     "build": "textlint-scripts build",
     "prepublish": "npm run --if-present build"
   },
-  "devDependencies": {
-    "textlint-scripts": "^1.2.4"
-  },
-  "name": "textlint-rule-aws-spellcheck",
-  "directories": {
-    "test": "test"
-  },
-  "author": "",
-  "license": "MIT",
-  "description": "",
   "dependencies": {
     "aws-word-rules": "^0.9.0"
+  },
+  "devDependencies": {
+    "textlint-scripts": "^1.2.4",
+    "prettier": "^1.18.2"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
