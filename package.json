@@ -1,13 +1,10 @@
 {
   "name": "textlint-rule-aws-spellcheck",
-  "version": "0.0.0",
+  "version": "0.5.0",
   "description": "textlint rule for AWS",
-  "main": "src/index.js",
   "files": [
-    "src/"
-  ],
-  "keywords": [
-    "textlintrule"
+    "src/",
+    "lib/"
   ],
   "author": "37108",
   "license": "MIT",
