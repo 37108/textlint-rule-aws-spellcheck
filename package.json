@@ -24,6 +24,6 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "aws-word-rules": "^0.1.0"
+    "aws-word-rules": "^0.9.0"
   }
 }
