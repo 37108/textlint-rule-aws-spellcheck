@@ -48,15 +48,15 @@ const spellCheck = text => {
       actual: matchedString,
       expected: expected,
       paddingIndex: match.index,
-      paddingLine: position.line - 1,// start with 0
-      paddingColumn: position.column// start with 0
+      paddingLine: position.line - 1, // start with 0
+      paddingColumn: position.column, // start with 0
     })
   })
   return results.reverse()
 }
 
-console.log(spellCheck("ec2"))
+console.log(spellCheck('ec2'))
 
 module.exports = {
-  spellCheck: spellCheck
+  spellCheck: spellCheck,
 }

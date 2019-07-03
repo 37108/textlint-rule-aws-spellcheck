@@ -19,7 +19,7 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
-const RuleHelper = require("textlint-rule-helper").RuleHelper
+const RuleHelper = require('textlint-rule-helper').RuleHelper
 const spellCheck = require('./spellCheck').spellCheck
 
 const reporter = context => {
@@ -33,13 +33,17 @@ const reporter = context => {
     const text = getSource(node)
     const results = spellCheck(text)
     results.forEach(result => {
-      const fixCommand = fixer.replaceTextRange([
-        result.paddingIndex, result.paddingIndex + result.actual.length
-      ], result.expected)
-      report(node, new RuleError(result.actual + " => " + result.expected, {
-        index: result.paddingIndex,
-        fix: fixCommand
-      }))
+      const fixCommand = fixer.replaceTextRange(
+        [result.paddingIndex, result.paddingIndex + result.actual.length],
+        result.expected,
+      )
+      report(
+        node,
+        new RuleError(result.actual + ' => ' + result.expected, {
+          index: result.paddingIndex,
+          fix: fixCommand,
+        }),
+      )
     })
   }
   return exports
@@ -47,5 +51,5 @@ const reporter = context => {
 
 module.exports = {
   linter: reporter,
-  fixer: reporter
+  fixer: reporter,
 }
