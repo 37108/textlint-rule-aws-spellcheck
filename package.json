@@ -22,7 +22,8 @@
   "scripts": {
     "test": "textlint-scripts test",
     "build": "textlint-scripts build",
-    "prepublish": "npm run --if-present build"
+    "prepublish": "npm run --if-present build",
+    "prettier": "prettier --write src/*.js"
   },
   "dependencies": {
     "aws-word-rules": "^0.9.0"
