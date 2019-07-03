@@ -25,26 +25,24 @@ const spellCheck = require('./spellCheck').spellCheck
 const reporter = context => {
   const helper = new RuleHelper(context)
   const { getSource, fixer, report, Syntax, RuleError } = context
-  return {
-    Syntax: {
-      Str: node => {
-        if (helper.isChildNode(node, [Syntax.Link, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis])) {
-          return
-        }
-        const text = getSource(node)
-        const results = spellCheck(text)
-        results.forEach(result => {
-          const fixCommand = fixer.replaceTextRange([
-            result.paddingIndex, result.paddingIndex + result.actual.length
-          ], result.expected)
-          context.report(node, new context.RuleError(result.actual + " => " + result.expected, {
-            index: result.paddingIndex,
-            fix: fixCommand
-          }))
-        })
-      },
+  const exports = {}
+  exports[Syntax.Str] = node => {
+    if (helper.isChildNode(node, [Syntax.Link, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis])) {
+      return
     }
+    const text = getSource(node)
+    const results = spellCheck(text)
+    results.forEach(result => {
+      const fixCommand = fixer.replaceTextRange([
+        result.paddingIndex, result.paddingIndex + result.actual.length
+      ], result.expected)
+      report(node, new RuleError(result.actual + " => " + result.expected, {
+        index: result.paddingIndex,
+        fix: fixCommand
+      }))
+    })
   }
+  return exports
 }
 
 module.exports = {
