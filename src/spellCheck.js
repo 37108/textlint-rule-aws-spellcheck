@@ -20,13 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 const dictonary = require('aws-word-rules')
 const StructuredSource = require('structured-source')
 
 const spellCheck = text => {
   const src = new StructuredSource(text)
-  results = dictonary.map(item => {
+  const results = []
+  dictonary.forEach(item => {
     const query = new RegExp(item.pattern, item.flag)
     const match = query.exec(text)
     if (!match) {
@@ -35,8 +35,7 @@ const spellCheck = text => {
     const matchedString = match[0]
     if (item.flag != null) {
       const strictQuery = new RegExp(item.pattern)
-      const isStrictMatch = strictQuery.test(match[0])
-      if (isStrictMatch) {
+      if (strictQuery.test(match[0])) {
         return
       }
     }
@@ -45,17 +44,18 @@ const spellCheck = text => {
       return
     }
     const position = src.indexToPosition(match.index)
-    return {
+    results.push({
       actual: matchedString,
       expected: expected,
       paddingIndex: match.index,
       paddingLine: position.line - 1,// start with 0
       paddingColumn: position.column// start with 0
-    }
+    })
   })
   return results.reverse()
 }
 
+console.log(spellCheck("ec2"))
 
 module.exports = {
   spellCheck: spellCheck
