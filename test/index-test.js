@@ -7,7 +7,7 @@ const rule = require("../src/index");
 tester.run("rule", rule, {
     valid: [
         // no problem
-        "text"
+        "ec2"
     ],
     invalid: [
         // single match

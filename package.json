@@ -1,6 +1,6 @@
 {
   "name": "textlint-rule-aws-spellcheck",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "textlint rule for AWS",
   "main": "lib/index.js",
   "files": [
@@ -24,7 +24,7 @@
     "prettier": "prettier --write src/*.js"
   },
   "dependencies": {
-    "aws-word-rules": "^0.9.1",
+    "aws-word-rules": "^1.0.1",
     "spellcheck-technical-word": "^2.0.0",
     "structured-source": "^3.0.2",
     "textlint-rule-helper": "^2.1.1"
