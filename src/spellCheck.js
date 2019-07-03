@@ -55,8 +55,6 @@ const spellCheck = text => {
   return results.reverse()
 }
 
-console.log(spellCheck('ec2'))
-
 module.exports = {
   spellCheck: spellCheck,
 }
