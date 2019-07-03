@@ -1,5 +1,5 @@
 # textlint-rule-aws-spellcheck
-
+[![npm version](https://badge.fury.io/js/textlint-rule-aws-spellcheck.svg)](https://badge.fury.io/js/textlint-rule-aws-spellcheck)
 
 
 ## Install
