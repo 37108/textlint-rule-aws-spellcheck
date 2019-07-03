@@ -33,6 +33,3 @@ npm-debug.log
 
 # Publish src/ instead lib/
 /lib
-
-# Personal reasons
-doc.md
