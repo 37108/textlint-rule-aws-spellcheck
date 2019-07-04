@@ -33,12 +33,6 @@ const spellCheck = text => {
       return
     }
     const matchedString = match[0]
-    if (item.flag != null) {
-      const strictQuery = new RegExp(item.pattern)
-      if (strictQuery.test(match[0])) {
-        return
-      }
-    }
     const expected = matchedString.replace(query, item.expected)
     if (text.slice(match.index).indexOf(expected) === 0) {
       return
